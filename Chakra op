@@ -1,0 +1,77 @@
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+local Window = Rayfield:CreateWindow({
+   Name = "anime figting sim | by KUrt",
+   LoadingTitle = "Rayfield Interface Suite",
+   LoadingSubtitle = "by kurt",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "SIRIUS", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD.
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Sirius Hub",
+      Subtitle = "Key System",
+      Note = "Join the discord (discord.gg/sirius)",
+      FileName = "SiriusKey",
+      SaveKey = true,
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = "pogisijian"
+   }
+})
+
+
+
+
+local Main = Window:CreateTab("main", 4483362458) -- Title, Image
+local Section = Main:CreateSection("chakra menu")
+
+
+
+
+local chakra = Main:CreateButton({
+   Name = "chakra Op",
+   Callback = function()
+      local replicated = game:GetService('ReplicatedStorage')
+ 
+      coroutine.wrap(function()
+        for i = 1,2000 do -- do howerver much you want
+          task.spawn(function()
+              replicated.RSPackage.Events.StatFunction:InvokeServer('Stat', 'Chakra')
+          end)
+        end
+      end)()
+       
+      -- Customize how bad you want it to lag here
+      for i = 1,1000 do
+          for i = 1,1000 do
+              for i = 1,10000 do
+              end
+          end
+      end
+   end,
+})
+
+
+local cool = Main:CreateToggle({
+   Name = "Inf yen",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/animefightingsimulator"))()
+   end,
+})
+
+local chakra = Main:CreateToggle({
+   Name = "Nam hub",
+   CurrentValue = false,
+   Flag = "Toggle3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/JASboy53/NAM-GUI/main/.gitignore"))()
+   end,
+})
